@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: resume-image
+spec:
+  type: LoadBalancer
+  selector:
+    app: resume-image
+  ports:
+  - port: 80
+    targetPort: 80

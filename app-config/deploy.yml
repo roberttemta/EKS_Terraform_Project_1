@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-image
+spec:
+  replicas: 4                                # You can scale your pods up and down
+  selector:
+    matchLabels:
+      app: resume-image
+  template:
+    metadata:
+      labels:
+        app: resume-image
+    spec:
+      containers:
+      - name: resume-image
+        image: roberttemta/resume-img:v3.0.10
+        ports:
+        - containerPort: 80
